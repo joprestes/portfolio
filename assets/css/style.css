@@ -886,3 +886,8 @@ button:disabled {
 @media (min-width: 768px) {
   .project-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
 }
+
+[data-theme="dark"] .footer a {
+  color: var(--color-primary-light); 
+  text-decoration: underline; 
+}
