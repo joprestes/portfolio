@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-theme="light">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <title data-translate-key="doc_title_multimind">MultiMind QA | Portfólio Joelma Ferreira</title>
+  <meta name="description" content="Detalhes sobre o projeto MultiMind QA, um chatbot de acessibilidade com Gemini API. Desenvolvido por Joelma Ferreira." data-translate-key="meta_description_multimind" />
+  <meta name="author" content="Joelma de Oliveira Prestes Ferreira" />
+  <link rel="author" href="mailto:joprestes@hotmail.com" />
+
+  <!-- Favicons e Ícones do Site -->
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml"> 
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png"> 
+  <link rel="manifest" href="../../site.webmanifest"> 
+ 
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+
+  <div class="visually-hidden" aria-live="polite" id="theme-announcer"></div>
+  
+  <!-- Acessibilidade: Link para pular a navegação -->
+  <a href="#multimind-project" class="skip-link" data-translate-key="skip_link" data-testid="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- ======================== HEADER & NAVBAR (CLONADO E AJUSTADO) ======================== -->
+  <header data-testid="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Menu principal">
+      <div class="container">
+        
+        <a class="navbar-brand" href="../../index.html" data-testid="navbar-brand" data-translate-key="nav_brand">Joelma Ferreira</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu" data-translate-key="nav_toggler_label" data-testid="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../../index.html#inicio" data-testid="nav-link-inicio" data-translate-key="nav_inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#sobre" data-testid="nav-link-sobre" data-translate-key="nav_sobre">Sobre Mim</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#habilidades" data-testid="nav-link-habilidades" data-translate-key="nav_habilidades">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#portfolio" data-testid="nav-link-portfolio" data-translate-key="nav_portfolio">Portfólio</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#contato" data-testid="nav-link-contato" data-translate-key="nav_contato">Contato</a></li>
+          </ul>
+          
+          <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light" aria-label="Change language to English" data-testid="botao-idioma">PT</button>
+
+          <button id="toggle-dark" class="btn btn-sm ms-lg-2 btn-outline-light" aria-pressed="false" aria-label="Ativar modo escuro" data-translate-key="toggle_dark_mode_label" data-testid="botao-modo-escuro">
+            🌙
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================== CONTEÚDO PRINCIPAL DO PROJETO ======================== -->
+  <main id="multimind-project" tabindex="-1">
+    
+    
+    <section class="project-hero" data-testid="multimind-hero">
+      <div class="container text-center">
+        <h1 data-translate-key="multimind.title" data-testid="multimind-title">Chatbot de Acessibilidade (MultiMind QA)</h1>
+        <p class="project-subtitle" data-translate-key="multimind.subtitle" data-testid="multimind-subtitle">Assistente inteligente com arquitetura multiagente para sanar dúvidas sobre acessibilidade digital.</p>
+        <img src="../../assets/img/multimind-banner.webp" alt="Banner do projeto MultiMind QA com ícone azul de acessibilidade e o texto 'Acessibilidade com Qualidade'." class="img-fluid project-banner-image">
+      </div>
+    </section>
+
+    <!-- Seção de Ações -->
+    <section class="project-actions text-center" aria-label="Ações do Projeto">
+      <div class="container">
+        <a href="https://chatbotacessibilidade.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-testid="multimind-live-demo-button" data-translate-key="multimind.button.live">Ver Projeto ao Vivo</a>
+        <a href="https://github.com/joprestes/chatbotAcessibilidade/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-testid="multimind-github-button" data-translate-key="multimind.button.github">Ver no GitHub</a>
+      </div>
+    </section>
+
+    
+    <div class="container project-content-wrapper">
+      
+      
+      <section class="project-about" aria-labelledby="about-heading">
+        <h2 id="about-heading" data-translate-key="multimind.about.title">Sobre o Projeto</h2>
+        <p data-translate-key="multimind.about.description">Este projeto é um chatbot acessível e didático, voltado para profissionais, desenvolvedores e equipes de qualidade que desejam tirar dúvidas sobre acessibilidade digital. A solução utiliza a API Gemini da Google para gerar respostas completas, testáveis e com referências confiáveis, baseadas em WCAG e ARIA.</p>
+      </section>
+
+      
+      <div class="project-details-grid">
+  
+        <!-- Card de Funcionalidades -->
+        <article class="detail-card" aria-labelledby="features-heading" data-testid="multimind-features-card">
+          <h2 id="features-heading" data-translate-key="multimind.features.title">Principais Funcionalidades</h2>
+          <ul>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-translate-key="multimind.features.item1">Respostas claras com exemplos práticos</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-translate-key="multimind.features.item2">Validação técnica baseada em WCAG e ARIA</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-translate-key="multimind.features.item3">Sugestões de testes com ferramentas (axe, NVDA)</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-translate-key="multimind.features.item4">Recomendações de estudo e referências</span></li>
+            <!-- NOVO ITEM ADICIONADO COM ÍCONE DE "NÃO FAZ" -->
+            <li><i class="fas fa-times-circle" aria-hidden="true"></i> <span data-translate-key="multimind.features.item5">Não revisa código-fonte</span></li>
+          </ul>
+        </article>
+
+        <!-- Card de Tecnologias -->
+        <article class="detail-card" aria-labelledby="tech-heading" data-testid="multimind-tech-stack-card">
+          <h2 id="tech-heading" data-translate-key="multimind.tech.title">Tecnologias Utilizadas</h2>
+          <ul class="tech-list">
+            <li>Python</li>
+            <li>Google Gemini API</li>
+            <li>Streamlit</li>
+            <li>Pytest</li>
+          </ul>
+        </article>
+      </div>
+
+    </div> 
+  </main> 
+
+  <!-- ======================== FOOTER (CLONADO E AJUSTADO) ======================== -->
+  <footer class="footer text-center py-4" data-testid="footer">
+    <div class="container">
+      <small>
+        <span data-translate-key="footer_copyright">© 2025 Joelma de Oliveira Prestes Ferreira</span>
+        <br class="d-md-none">
+        <a href="https://www.linkedin.com/in/joprestes84" target="_blank" rel="noopener noreferrer" data-testid="link-linkedin">LinkedIn</a> | 
+        <a href="../../index.html#inicio" data-testid="link-voltar-topo" aria-label="Voltar para o início da página" data-translate-key="footer_back_to_top">Voltar ao topo</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
+  <script src="https://kit.fontawesome.com/99ba202d26.js" crossorigin="anonymous" defer></script>
+  <script src="../../assets/js/script.js" defer></script>
+
+</body>
+</html>

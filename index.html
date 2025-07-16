@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-theme="light">
+<head>
+ 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <title data-translate-key="doc_title">Joelma Ferreira | Líder de QA & Acessibilidade</title>
+  <meta name="description" content="Portfólio de Joelma Ferreira, Líder de Engenharia de Qualidade. Especialista em automação de testes, QA e acessibilidade digital (a11y)." data-translate-key="meta_description" />
+  <meta name="author" content="Joelma de Oliveira Prestes Ferreira" />
+  <link rel="author" href="mailto:joprestes@hotmail.com" />
+
+  <!-- Favicons e Ícones do Site -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"> 
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"> 
+  <link rel="manifest" href="/site.webmanifest"> 
+ 
+  <!-- Folhas de Estilo (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Folha de estilos personalizada  -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#menuNav" tabindex="0">
+
+  <div class="visually-hidden" aria-live="polite" id="theme-announcer"></div>
+  
+  <!-- Acessibilidade: Link para pular a navegação -->
+  <a href="#inicio" class="skip-link" data-translate-key="skip_link" data-testid="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- ======================== HEADER & NAVBAR ======================== -->
+  <header data-testid="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Menu principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio" data-testid="navbar-brand" data-translate-key="nav_brand">Joelma Ferreira</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu" data-translate-key="nav_toggler_label" data-testid="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#inicio" data-testid="nav-link-inicio" data-translate-key="nav_inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre" data-testid="nav-link-sobre" data-translate-key="nav_sobre">Sobre Mim</a></li>
+            <li class="nav-item"><a class="nav-link" href="#habilidades" data-testid="nav-link-habilidades" data-translate-key="nav_habilidades">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio" data-testid="nav-link-portfolio" data-translate-key="nav_portfolio">Portfólio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato" data-testid="nav-link-contato" data-translate-key="nav_contato">Contato</a></li>
+          </ul>
+          
+          <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light" aria-label="Change language to English" data-testid="botao-idioma">PT</button>
+
+          <button id="toggle-dark" class="btn btn-sm ms-lg-2 btn-outline-light" aria-pressed="false" aria-label="Ativar modo escuro" data-translate-key="toggle_dark_mode_label" data-testid="botao-modo-escuro">
+            🌙
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================== HERO SECTION ======================== -->
+  <main id="inicio" class="bgimage" data-testid="hero-section" role="region" aria-label="Banner ilustrado com retrato animado de Joelma de Oliveira Prestes Ferreira" tabindex="-1">
+    <div class="text-overlay" data-testid="hero-content" role="group" aria-labelledby="hero-nome" aria-describedby="hero-profissao">
+      <h1 id="hero-nome" class="heroTitulo" data-testid="hero-title" data-translate-key="hero_title">Joelma de O. Prestes Ferreira</h1>
+      <p id="hero-profissao" class="heroDesc" data-testid="hero-description" data-translate-key="hero_description">Líder de Engenharia de Qualidade de Software</p>
+    </div>
+  </main>
+
+  <!-- ======================== SEÇÃO SOBRE MIM ======================== -->
+  <section id="sobre" class="py-5" aria-labelledby="titulo-sobre" data-testid="sobre-section">
+    <div class="container">
+      <h2 id="titulo-sobre" class="text-center mb-5" data-translate-key="about_title" data-testid="titulo-sobre">Sobre Mim</h2>
+      <div class="row">
+        <div class="col-12 col-md-5 mb-4 mb-md-0" role="group" aria-label="Informações pessoais">
+          <dl>
+            <dt><i class="fa-solid fa-id-card" aria-hidden="true"></i> <span class="visually-hidden">Nome</span></dt>
+            <dd data-testid="info-nome">Joelma de Oliveira Prestes Ferreira</dd>
+            <dt><i class="fa-solid fa-cake-candles" aria-hidden="true"></i> <span class="visually-hidden" data-translate-key="about_age_label">Idade</span></dt>
+            <dd data-testid="info-idade" data-translate-key="about_age_value">41 anos</dd>
+            <dt><i class="fa-solid fa-briefcase" aria-hidden="true"></i> <span class="visually-hidden" data-translate-key="about_profession_label">Profissão</span></dt>
+            <dd data-testid="info-profissao" data-translate-key="about_profession_value">Líder de Engenharia de Qualidade de Software</dd>
+          </dl>
+        </div>
+        <div class="col-12 col-md-7" role="group" aria-label="Resumo da experiência profissional">
+          <p data-translate-key="about_bio1">Profissional de Qualidade de Software com mais de 4 anos de experiência, tendo atuado no Grupo Pão de Açúcar. Minha jornada inclui atuação em testes manuais e automação, com Java e JavaScript, além de pipelines de CI/CD.</p>
+          <p data-translate-key="about_bio2">Atualmente lidero a área de qualidade no time FIC, promovendo excelência em testes, automação, inclusão e acessibilidade digital. Atuo também no capítulo de QA, compartilhando conhecimento e práticas com outros times.</p>
+          <p data-translate-key="about_bio3">Meu trabalho une estratégia, empatia e técnica — garantindo produtos com qualidade, acessibilidade e impacto real para as pessoas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SEÇÃO HABILIDADES ======================== -->
+  <section id="habilidades" class="py-5 bg-light" aria-labelledby="titulo-habilidades" data-testid="habilidades-section">
+    <div class="container">
+      <h2 id="titulo-habilidades" class="text-center mb-4" data-translate-key="skills_title" data-testid="titulo-habilidades">Habilidades</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-planejamento" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_planning_title">Planejamento de Testes</h3>
+              <ul><li data-translate-key="skill_planning_item1">Levantamento de requisitos</li><li data-translate-key="skill_planning_item2">Estratégia de testes</li><li data-translate-key="skill_planning_item3">Mapas mentais e Gherkin</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-java" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_java_title">Automação com Java</h3>
+              <ul><li>Selenium WebDriver</li><li>JUnit e RestAssured</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-js" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_js_title">Automação com JavaScript</h3>
+              <ul><li data-translate-key="skill_js_item1">Cypress para front e back-end</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-git" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_git_title">Git / GitHub</h3>
+              <ul><li data-translate-key="skill_git_item1">Controle de versão com Git</li><li data-translate-key="skill_git_item2">Trabalho com repositórios colaborativos</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-cicd" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_cicd_title">CI/CD</h3>
+              <ul><li data-translate-key="skill_cicd_item1">Integração contínua com Jenkins</li><li data-translate-key="skill_cicd_item2">Monitoramento com SonarQube, Grafana e Kibana</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="habilidade-ageis" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title" data-translate-key="skill_agile_title">Metodologias Ágeis</h3>
+              <ul><li data-translate-key="skill_agile_item1">Scrum e Kanban</li><li data-translate-key="skill_agile_item2">Uso de Azure DevOps</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SEÇÃO PORTFÓLIO ======================== -->
+  <section id="portfolio" class="py-5" aria-labelledby="titulo-portfolio" data-testid="portfolio-section">
+    <div class="container">
+      <h2 id="titulo-portfolio" class="text-center mb-4" data-translate-key="portfolio_title" data-testid="titulo-portfolio">Portfólio</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-estante" tabindex="0" aria-labelledby="titulo-estante">
+            <img src="assets/img/thumbnail/estante.webp" loading="lazy" class="card-img-top" alt="Miniatura do projeto Estante de Livros com fundo roxo e ícones de livros." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-estante" class="card-title" data-translate-key="project_bookshelf_title">📘 Estante de Livros</h3>
+              <p class="card-text" data-translate-key="project_bookshelf_desc">Página que simula uma estante virtual. Criada com HTML semântico e CSS, com estrutura acessível.</p>
+              <ul class="tech-list"><li>HTML</li><li>CSS</li></ul>
+              <a href="projetos/estante/estante.html" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" data-testid="botao-ver-estante" data-translate-key="project_button_text">Ver Projeto</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-floricultura" tabindex="0" aria-labelledby="titulo-floricultura">
+            <img src="assets/img/thumbnail/floricultura.webp" loading="lazy" class="card-img-top" alt="Miniatura do projeto Floricultura com formulário de contato e flores." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-floricultura" class="card-title" data-translate-key="project_florist_title">🌷 Floricultura</h3>
+              <p class="card-text" data-translate-key="project_florist_desc">Site institucional com foco em acessibilidade, com formulário validado e navegação fluida.</p>
+
+              <ul class="tech-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <a href="projetos/floricultura/floricultura.html" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" data-testid="botao-ver-floricultura" data-translate-key="project_button_text">Ver Projeto</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-mario" tabindex="0" aria-labelledby="titulo-mario">
+            <img src="assets/img/thumbnail/mario.webp" loading="lazy" class="card-img-top" alt="Miniatura do jogo Mario Jump com Mario pulando obstáculos." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-mario" class="card-title" data-translate-key="project_mario_title">🎮 Mario Jump</h3>
+              <p class="card-text" data-translate-key="project_mario_desc">Jogo simples com HTML, CSS e JavaScript, criando animações e controles por teclado.</p>
+              <ul class="tech-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <a href="projetos/mario/mario.html" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" data-testid="botao-ver-mario" data-translate-key="project_button_text">Ver Projeto</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-cartao" tabindex="0" aria-labelledby="titulo-cartao">
+            <img src="assets/img/thumbnail/cartao.webp" loading="lazy" class="card-img-top" alt="Miniatura de um cartão de visitas com efeito flip." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-cartao" class="card-title" data-translate-key="project_card_title">💳 Cartão de Visitas</h3>
+              <p class="card-text" data-translate-key="project_card_desc">Cartão interativo com efeito de virada (flip) usando apenas HTML e CSS.</p>
+              <ul class="tech-list"><li>HTML</li><li>CSS</li><li>3D</li></ul>
+              <a href="projetos/cartao/business-card.html" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" data-testid="botao-ver-cartao" data-translate-key="project_button_text">Ver Projeto</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-multimind" tabindex="0" aria-labelledby="titulo-multimind">
+            <img src="assets/img/thumbnail/multimind-thumbnail.jpg" loading="lazy" class="card-img-top" alt="Interface de chatbot com agentes virtuais testando acessibilidade." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-multimind" class="card-title" data-translate-key="project_multimind_title">🧠 MultiMind QA</h3>
+              <p class="card-text" data-translate-key="project_multimind_desc">Chatbot multiagente com Gemini para validação de acessibilidade e qualidade de software.</p>
+              <ul class="tech-list"><li>Gemini API</li><li>Acessibilidade</li><li>Python</li></ul>
+              <a href="projetos/multimind/multimind.html" class="btn btn-primary mt-auto" rel="noopener noreferrer" data-testid="botao-ver-multimind" data-translate-key="project_button_text">Ver Projeto</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <article class="card h-100 animate-on-scroll" data-testid="projeto-futuro" tabindex="0" aria-labelledby="titulo-futuro">
+            <img src="assets/img/thumbnail/placeholder.webp" loading="lazy" class="card-img-top" alt="Imagem ilustrativa de novo projeto em breve." />
+            <div class="card-body d-flex flex-column">
+              <h3 id="titulo-futuro" class="card-title" data-translate-key="project_future_title">✨ Em breve...</h3>
+              <p class="card-text text-center" data-translate-key="project_future_desc">Novidades a caminho! Um novo projeto está em desenvolvimento.</p>
+              <ul class="tech-list"><li>Aguardando</li></ul>
+              <button class="btn btn-primary mt-auto" disabled aria-disabled="true" data-translate-key="project_button_soon">Em breve</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SEÇÃO CONTATO ======================== -->
+  <section id="contato" class="py-5 bg-light" aria-labelledby="titulo-contato" data-testid="contato-section">
+    <div class="container">
+      <h2 id="titulo-contato" class="text-center mb-4" data-testid="contato-titulo" data-translate-key="contact_title">Fale Comigo</h2>
+      <form class="mx-auto" style="max-width: 600px;" novalidate data-testid="contato-formulario">
+        <div class="mb-3">
+          <label for="nome" class="form-label" data-translate-key="contact_name_label">Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required aria-required="true" data-testid="input-nome" data-translate-key="contact_name_placeholder"/>
+          <div id="nome-error" class="form-error-message" aria-live="polite"></div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label" data-translate-key="contact_email_label">E-mail</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required aria-required="true" data-testid="input-email" data-translate-key="contact_email_placeholder"/>
+          <div id="email-error" class="form-error-message" aria-live="polite"></div>
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label" data-translate-key="contact_message_label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required aria-required="true" data-testid="input-mensagem" data-translate-key="contact_message_placeholder"></textarea>
+          <div id="mensagem-error" class="form-error-message" aria-live="polite"></div>
+        </div>
+        <button type="submit" class="btn btn-primary" aria-label="Enviar mensagem" data-testid="botao-enviar" data-translate-key="contact_submit_button">Enviar</button>
+      </form>
+      <div id="form-status" role="status" class="mt-3 text-center" tabindex="-1"></div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+   <footer class="footer text-center py-4" data-testid="footer">
+    <div class="container">
+      <small>
+        <span data-translate-key="footer_copyright">© 2025 Joelma de Oliveira Prestes Ferreira</span>
+        <br class="d-md-none">
+        <a href="https://www.linkedin.com/in/joprestes84" target="_blank" rel="noopener noreferrer" data-testid="link-linkedin">LinkedIn</a> | 
+        <a href="#inicio" data-testid="link-voltar-topo" aria-label="Voltar para o início da página" data-translate-key="footer_back_to_top">Voltar ao topo</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- Scripts-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
+  <script src="https://kit.fontawesome.com/99ba202d26.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/script.js" defer></script>
+
+</body>
+</html>

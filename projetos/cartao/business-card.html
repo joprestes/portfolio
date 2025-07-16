@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO e i18n -->
+    <title data-translate-key="card_pageTitle">Cartão de Visitas | Portfólio Joelma</title>
+    <meta name="description" content="Um cartão de visitas virtual interativo com animação 3D, criado por Joelma Prestes." data-translate-key="[content]card_metaDescription">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="visually-hidden" aria-live="polite" id="theme-announcer"></div>
+
+    <!-- Acessibilidade: Link para pular a navegação -->
+    <a href="#main-content" class="skip-link" data-translate-key="skip_link" data-testid="skip-link">Pular para o conteúdo principal</a>
+
+    <!--HEADER E NAVBAR-->
+    <header data-testid="navbar">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Menu principal">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html" data-testid="navbar-brand" data-translate-key="nav_brand">Joelma Ferreira</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" data-translate-key="[aria-label]nav_toggler_label" data-testid="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="/index.html#inicio" data-testid="nav-link-inicio" data-translate-key="nav_inicio">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="/index.html#sobre" data-testid="nav-link-sobre" data-translate-key="nav_sobre">Sobre Mim</a></li>
+              <li class="nav-item"><a class="nav-link" href="/index.html#habilidades" data-testid="nav-link-habilidades" data-translate-key="nav_habilidades">Habilidades</a></li>
+              <li class="nav-item"><a class="nav-link" href="/index.html#portfolio" data-testid="nav-link-portfolio" data-translate-key="nav_portfolio">Portfólio</a></li>
+              <li class="nav-item"><a class="nav-link" href="/index.html#contato" data-testid="nav-link-contato" data-translate-key="nav_contato">Contato</a></li>
+            </ul>
+            
+            <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light" aria-label="Mudar idioma" data-testid="botao-idioma">PT</button>
+
+            <button id="toggle-dark" class="btn btn-sm ms-lg-2 btn-outline-light" aria-pressed="false" data-translate-key="[aria-label]toggle_dark_mode_label" data-testid="botao-modo-escuro">
+              🌙
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal do Projeto -->
+    <main id="main-content">
+        <section id="business-card-project">
+            <div class="frame" data-testid="card-frame">
+                <div class="card" tabindex="0" role="button" data-testid="card-interactive-area">
+                    <span class="sr-only" data-translate-key="card_flipInstruction"></span>
+                    <div class="flip">
+                        <div class="front" data-testid="card-front">
+                            <h1 data-translate-key="card_frontText"></h1>
+                            <p class="flip-me" data-translate-key="card_flipMe"></p>
+                        </div>
+                        <div class="back" data-testid="card-back">
+                            <h3 data-translate-key="card_name"></h3>
+                            <h2 data-translate-key="card_role"></h2>
+                            <div class="social-links">
+                                <a href="https://github.com/joprestes" target="_blank" rel="noopener noreferrer" data-testid="github-link" data-translate-key="[aria-label]card_githubAriaLabel">
+                                    <img src="/assets/img/github.png" alt="Ícone do GitHub" loading="lazy">
+                                </a>
+                                <a href="https://www.linkedin.com/in/joprestes84/" target="_blank" rel="noopener noreferrer" data-testid="linkedin-link" data-translate-key="[aria-label]card_linkedinAriaLabel">
+                                    <img src="/assets/img/linkedin.png" alt="Ícone do LinkedIn" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js" defer></script>
+
+</body>
+</html>

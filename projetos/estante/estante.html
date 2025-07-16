@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <!-- Metadados -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Estante de Livros | Portfólio Joelma Ferreira</title>
+  <meta name="description" content="Projeto de uma estante de livros virtual, focado em HTML semântico, CSS moderno e acessibilidade."/>
+  
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#menuNav" tabindex="0">
+
+  <div class="visually-hidden" aria-live="polite" id="theme-announcer"></div>
+  <a href="#conteudo-principal" class="skip-link" data-translate-key="skip_link">Pular para o conteúdo principal</a>
+
+  <!-- ======================== HEADER ======================== -->
+  <header data-testid="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Menu principal">
+      <div class="container">
+        <a class="navbar-brand" href="../../index.html#inicio" data-translate-key="nav_brand">Joelma Ferreira</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" data-translate-key="nav_toggler_label">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li><a class="nav-link" href="../../index.html#inicio" data-translate-key="nav_inicio">Início</a></li>
+            <li><a class="nav-link" href="../../index.html#sobre" data-translate-key="nav_sobre">Sobre Mim</a></li>
+            <li><a class="nav-link" href="../../index.html#habilidades" data-translate-key="nav_habilidades">Habilidades</a></li>
+            <li><a class="nav-link" href="../../index.html#portfolio" data-translate-key="nav_portfolio">Portfólio</a></li>
+            <li><a class="nav-link" href="../../index.html#contato" data-translate-key="nav_contato">Contato</a></li>
+          </ul>
+          <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light">PT</button>
+          <button id="toggle-dark" class="btn btn-sm ms-lg-2 btn-outline-light" aria-pressed="false">🌙</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================== CONTEÚDO PRINCIPAL DO PROJETO ======================== -->
+  <main id="conteudo-principal" class="container py-5 mt-5">
+    
+    <div class="text-center mb-5">
+        <h1 class="project-title" data-translate-key="project_bookshelf_title">📘 Estante de Livros</h1>
+        <p class="project-subtitle" data-translate-key="project_bookshelf_desc">Página que simula uma estante virtual. Criada com HTML semântico e CSS, com estrutura acessível.</p>
+        <a href="../../index.html#portfolio" class="btn btn-outline-primary" data-testid="voltar-portfolio" data-translate-key="project_bookshelf_back_to_portfolio">← Voltar ao Portfólio</a>
+    </div>
+
+    <!-- Menu Hambúrguer do Projeto -->
+    <nav id="estante-menu" aria-label="Sumário dos Livros" data-testid="estante-menu">
+        <span class="menu-label" data-translate-key="project_bookshelf_nav_label">Navegue pelos livros:</span>
+        <button id="menu-toggle" aria-controls="menu-lista" aria-expanded="false" data-testid="estante-menu-toggle">
+            <span class="sr-only" data-translate-key="project_bookshelf_open_menu">Abrir Sumário</span>
+            <span class="barra" aria-hidden="true"></span>
+            <span class="barra" aria-hidden="true"></span>
+            <span class="barra" aria-hidden="true"></span>
+        </button>
+        <div id="menu-lista" data-testid="estante-menu-lista">
+            <h2 data-translate-key="project_bookshelf_summary_title">Sumário:</h2>
+            <ol>
+              <li><a href="#l1" data-translate-key="project_bookshelf_book1" data-testid="sumario-link-l1">A Casa da Floresta</a></li>
+              <li><a href="#l2" data-translate-key="project_bookshelf_book2" data-testid="sumario-link-l2">O Senhor dos Anéis</a></li>
+              <li><a href="#l3" data-translate-key="project_bookshelf_book3" data-testid="sumario-link-l3">O Jardim dos Esquecidos</a></li>
+              <li><a href="#l4" data-translate-key="project_bookshelf_book4" data-testid="sumario-link-l4">Doutor Sono</a></li>
+              <li><a href="#l5" data-translate-key="project_bookshelf_book5" data-testid="sumario-link-l5">O Aliciador</a></li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Seções dos Livros -->
+    <section id="l1" class="livro-secao card" tabindex="0" aria-labelledby="titulo-l1" data-testid="livro-secao-l1">
+        <h3 id="titulo-l1" data-translate-key="project_bookshelf_book1">A Casa da Floresta</h3>
+        <img src="img/a-casa-da-floresta.jpg" loading="lazy" alt="Capa do livro A Casa da Floresta.">
+        
+        <h4 data-translate-key="project_bookshelf_synopsis">Sinopse</h4>
+        <p data-translate-key="project_bookshelf_synopsis_l1_intro"><em>As origens de Avalon reveladas em mais um best-seller de Marion Zimmer Bradley. "As brumas de Avalon", clássica releitura do mito arturiano sob a perspectiva feminina, é a obra-prima da autora.</em></p>
+        
+        <div class="accordion" id="accordionL1">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingL1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseL1" aria-expanded="false" aria-controls="collapseL1" data-testid="sinopse-toggle-l1">
+                <span data-translate-key="project_bookshelf_read_more">Ler o resto da sinopse</span> <span class="visually-hidden" data-translate-key="project_bookshelf_book1">de A Casa da Floresta</span>
+              </button>
+            </h4>
+            <div id="collapseL1" class="accordion-collapse collapse" aria-labelledby="headingL1" data-bs-parent="#accordionL1" data-testid="sinopse-conteudo-l1">
+              <div class="accordion-body">
+                <p data-translate-key="project_bookshelf_synopsis_l1_full">Ao longo dos anos após a escrita do primeiro volume, Bradley se dedicou aos demais romances do chamado Ciclo de Avalon...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p><strong><span data-translate-key="project_bookshelf_source">Fonte:</span></strong><em> Google Books</em></p>
+        <table>
+            <caption class="visually-hidden">Detalhes da publicação do livro A Casa da Floresta</caption>
+            <tr><th data-translate-key="project_bookshelf_pub_date">Data da Primeira Publicação</th><th data-translate-key="project_bookshelf_author">Autor(a)</th><th data-translate-key="project_bookshelf_language">Idioma Original</th><th data-translate-key="project_bookshelf_genres">Gêneros</th></tr>
+            <tr><td>01 de Abril de 1994</td><td>Marion Zimmer Bradley</td><td>Inglês</td><td>Literatura fantástica, Ficção histórica, Romance de amor</td></tr>
+        </table>
+    </section>
+
+    <section id="l2" class="livro-secao card" tabindex="0" aria-labelledby="titulo-l2" data-testid="livro-secao-l2">
+      <h3 id="titulo-l2" data-translate-key="project_bookshelf_book2">O Senhor dos Anéis</h3>
+      <img src="img/o-senhor-dos-aneis.jpg" loading="lazy" alt="Capa do livro O Senhor dos Anéis.">
+      
+      <h4 data-translate-key="project_bookshelf_synopsis">Sinopse</h4>
+      <p data-translate-key="project_bookshelf_synopsis_l2_intro"><em>O volume inicial de "O Senhor dos Anéis", lançado originalmente em julho de 1954, foi o primeiro grande épico de fantasia moderno...</em></p>
+
+      <div class="accordion" id="accordionL2">
+        <div class="accordion-item">
+          <h4 class="accordion-header" id="headingL2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseL2" aria-expanded="false" aria-controls="collapseL2" data-testid="sinopse-toggle-l2">
+              <span data-translate-key="project_bookshelf_read_more">Ler o resto da sinopse</span> <span class="visually-hidden" data-translate-key="project_bookshelf_book2">de O Senhor dos Anéis</span>
+            </button>
+          </h4>
+          <div id="collapseL2" class="accordion-collapse collapse" aria-labelledby="headingL2" data-bs-parent="#accordionL2" data-testid="sinopse-conteudo-l2">
+            <div class="accordion-body">
+              <p data-translate-key="project_bookshelf_synopsis_l2_full">A Sociedade do Anel começa no Condado, a região rural do oeste da Terra-média onde vivem os diminutos e pacatos hobbits...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p><strong><span data-translate-key="project_bookshelf_source">Fonte:</span></strong><em> Google Books</em></p>
+      <table>
+          <caption class="visually-hidden">Detalhes da publicação do livro O Senhor dos Anéis</caption>
+          <tr><th data-translate-key="project_bookshelf_pub_date">Data da Primeira Publicação</th><th data-translate-key="project_bookshelf_author">Autor(a)</th><th data-translate-key="project_bookshelf_language">Idioma Original</th><th data-translate-key="project_bookshelf_genres">Gêneros</th></tr>
+          <tr><td>29 de Julho de 1954</td><td>J. R. R. Tolkien</td><td>Inglês</td><td>Literatura fantástica</td></tr>
+      </table>
+    </section>
+
+    <section id="l3" class="livro-secao card" tabindex="0" aria-labelledby="titulo-l3" data-testid="livro-secao-l3">
+        <h3 id="titulo-l3" data-translate-key="project_bookshelf_book3">O Jardim dos Esquecidos</h3>
+        <img src="img/o-jardim-dos-esquecidos.jpg" loading="lazy" alt="Capa do livro O Jardim dos Esquecidos.">
+        <h4 data-translate-key="project_bookshelf_synopsis">Sinopse</h4>
+        <p data-translate-key="project_bookshelf_synopsis_l3_intro"><em>Após a morte do pai, os irmãos Chris, Cath e os gêmeos Carrie e Cory são levados pela mãe, Corine, para o único lugar onde poderiam morar: a casa dos avós, conhecida como a mansão Foxworth Hall.</em></p>
+        <div class="accordion" id="accordionL3">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingL3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseL3" aria-expanded="false" aria-controls="collapseL3" data-testid="sinopse-toggle-l3">
+                <span data-translate-key="project_bookshelf_read_more">Ler o resto da sinopse</span> <span class="visually-hidden" data-translate-key="project_bookshelf_book3">de O Jardim dos Esquecidos</span>
+              </button>
+            </h4>
+            <div id="collapseL3" class="accordion-collapse collapse" aria-labelledby="headingL3" data-bs-parent="#accordionL3" data-testid="sinopse-conteudo-l3">
+              <div class="accordion-body">
+                <p data-translate-key="project_bookshelf_synopsis_l3_full">Enganadas achando que a nova vida seria cheia de luxos e sonhos realizados, as crianças não imaginavam que os avós as consideravam frutos do demônio...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><strong><span data-translate-key="project_bookshelf_source">Fonte:</span></strong><em> Google Books</em></p>
+        <table>
+            <caption class="visually-hidden">Detalhes da publicação do livro O Jardim dos Esquecidos</caption>
+            <tr><th data-translate-key="project_bookshelf_pub_date">Data da Primeira Publicação</th><th data-translate-key="project_bookshelf_author">Autor(a)</th><th data-translate-key="project_bookshelf_language">Idioma Original</th><th data-translate-key="project_bookshelf_genres">Gêneros</th></tr>
+            <tr><td>Novembro de 1979</td><td>V.C. Andrews</td><td>Inglês</td><td>Literatura Gótica, Saga de Família.</td></tr>
+        </table>
+    </section>
+
+    <section id="l4" class="livro-secao card" tabindex="0" aria-labelledby="titulo-l4" data-testid="livro-secao-l4">
+        <h3 id="titulo-l4" data-translate-key="project_bookshelf_book4">Doutor Sono</h3>
+        <img src="img/doutor-sono.jpg" loading="lazy" alt="Capa do livro Doutor Sono.">
+        <h4 data-translate-key="project_bookshelf_synopsis">Sinopse</h4>
+        <p data-translate-key="project_bookshelf_synopsis_l4_intro"><em>Na infância, Danny Torrance sobreviveu a uma tentativa de homicídio por parte do pai, um escritor perturbado pelos espíritos malignos do Hotel Overlook.</em></p>
+        <div class="accordion" id="accordionL4">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingL4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseL4" aria-expanded="false" aria-controls="collapseL4" data-testid="sinopse-toggle-l4">
+                <span data-translate-key="project_bookshelf_read_more">Ler o resto da sinopse</span> <span class="visually-hidden" data-translate-key="project_bookshelf_book4">de Doutor Sono</span>
+              </button>
+            </h4>
+            <div id="collapseL4" class="accordion-collapse collapse" aria-labelledby="headingL4" data-bs-parent="#accordionL4" data-testid="sinopse-conteudo-l4">
+              <div class="accordion-body">
+                <p data-translate-key="project_bookshelf_synopsis_l4_full">Já adulto, traumatizado e alcoólatra. Danny se estabelece em uma pequena cidade, onde consegue um emprego no hospital local...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><strong><span data-translate-key="project_bookshelf_source">Fonte:</span></strong><em> Google Books</em></p>
+        <table>
+            <caption class="visually-hidden">Detalhes da publicação do livro Doutor Sono</caption>
+            <tr><th data-translate-key="project_bookshelf_pub_date">Data da Primeira Publicação</th><th data-translate-key="project_bookshelf_author">Autor(a)</th><th data-translate-key="project_bookshelf_language">Idioma Original</th><th data-translate-key="project_bookshelf_genres">Gêneros</th></tr>
+            <tr><td>24 de Setembro de 2013</td><td>Stephen King</td><td>Inglês</td><td>Terror</td></tr>
+        </table>
+    </section>
+
+    <section id="l5" class="livro-secao card" tabindex="0" aria-labelledby="titulo-l5" data-testid="livro-secao-l5">
+        <h3 id="titulo-l5" data-translate-key="project_bookshelf_book5">O Aliciador</h3>
+        <img src="img/o-aliciador.jpg" loading="lazy" alt="Capa do livro O Aliciador.">
+        <h4 data-translate-key="project_bookshelf_synopsis">Sinopse</h4>
+        <p data-translate-key="project_bookshelf_synopsis_l5_intro"><em>Em seu romance de estréia, o escritor italiano Donato Carrisi surpreendeu e arrebatou a crítica e o público ao embrenhar-se por um gênero até então fortemente atribuído aos grandes escritores americanos.</em></p>
+        <div class="accordion" id="accordionL5">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingL5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseL5" aria-expanded="false" aria-controls="collapseL5" data-testid="sinopse-toggle-l5">
+                <span data-translate-key="project_bookshelf_read_more">Ler o resto da sinopse</span> <span class="visually-hidden" data-translate-key="project_bookshelf_book5">de O Aliciador</span>
+              </button>
+            </h4>
+            <div id="collapseL5" class="accordion-collapse collapse" aria-labelledby="headingL5" data-bs-parent="#accordionL5" data-testid="sinopse-conteudo-l5">
+              <div class="accordion-body">
+                <p data-translate-key="project_bookshelf_synopsis_l5_full">Presente nas listas de best sellers dos principais jornais da Itália logo em seu lançamento, com mais de 180 mil exemplares vendidos...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><strong><span data-translate-key="project_bookshelf_source">Fonte:</span></strong><em> Google Books</em></p>
+        <table>
+            <caption class="visually-hidden">Detalhes da publicação do livro O Aliciador</caption>
+            <tr><th data-translate-key="project_bookshelf_pub_date">Data da Primeira Publicação</th><th data-translate-key="project_bookshelf_author">Autor(a)</th><th data-translate-key="project_bookshelf_language">Idioma Original</th><th data-translate-key="project_bookshelf_genres">Gêneros</th></tr>
+            <tr><td>2009</td><td>Donato Carrisi</td><td>Italiano</td><td>Thriller Criminal</td></tr>
+        </table>
+    </section>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer text-center py-4" data-testid="footer">
+    <div class="container">
+      <small>
+        <span data-translate-key="footer_copyright">© 2025 Joelma de Oliveira Prestes Ferreira</span>
+        <br class="d-md-none">
+        <a href="https://www.linkedin.com/in/joprestes84" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+        <a href="#conteudo-principal" data-testid="link-voltar-topo" aria-label="Voltar para o início da página" data-translate-key="footer_back_to_top">Voltar ao topo</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
+  <script src="https://kit.fontawesome.com/99ba202d26.js" crossorigin="anonymous" defer></script>
+  <script src="../../assets/js/script.js" defer></script>
+
+</body>
+</html>
