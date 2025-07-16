@@ -5,9 +5,6 @@
   <a href="#-english-version-us">English 🇺🇸</a>
 </p>
 
-<p align="center">
-  <img src="https://i.imgur.com/SAIjgN0.gif" alt="Demonstração animada do portfólio, mostrando a troca de tema e de idioma" width="100%">
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
@@ -17,9 +14,6 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="Licença MIT">
 </p>
 
-<p align="center">
-  🔗 <strong>Veja online:</strong> <a href="https://joelmaferreira.dev" target="_blank">joelmaferreira.dev</a>
-</p>
 
 ---
 
