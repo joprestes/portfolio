@@ -1,4 +1,4 @@
-# Portfólio de Joelma Ferreira | Líder de QA & Especialista em Acessibilidade Digital
+# Portfólio de Joelma Ferreira | Líder de QA & Especialista em Automação e Acessibilidade Digital
 
 <p align="center">
   <a href="#-versão-em-português-br">Português 🇧🇷</a> | 
