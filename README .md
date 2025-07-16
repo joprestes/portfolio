@@ -81,6 +81,7 @@ Líder de Engenharia de Qualidade de Software, apaixonada por criar produtos dig
 
 * 🔗 [LinkedIn](https://www.linkedin.com/in/joprestes84/)
 * 📧 joprestes@hotmail.com
+* 🔗 [Medium] [https://medium.com/@joprestes]
 
 ### 📄 Licença
 
@@ -154,6 +155,7 @@ A Quality Engineering Lead passionate about inclusive, high-quality digital prod
 
 * 🔗 [LinkedIn](https://www.linkedin.com/in/joprestes84/)
 * 📧 joprestes@hotmail.com
+* 🔗 [Medium] [https://medium.com/@joprestes]
 
 ---
 ### 📄 License
