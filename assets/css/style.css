@@ -888,6 +888,6 @@ button:disabled {
 }
 
 [data-theme="dark"] .footer a {
-  color: var(--color-primary-light); 
+  color: white; 
   text-decoration: underline; 
 }
