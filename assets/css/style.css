@@ -348,6 +348,17 @@ button:disabled {
   border-top: 4px solid var(--color-primary);
   padding: 2rem 1rem;
 }
+
+
+.footer a {
+  color: white; 
+  text-decoration: underline;
+}
+.footer a:hover,
+.footer a:focus-visible {
+  color: #cccccc; 
+}
+
 .footer a[data-testid="link-voltar-topo"] {
   display: inline-block;
   padding: 0.5rem 1rem;
