@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         this.translations = await response.json();
       } catch (error) {
         console.error("Could not load translations:", error);
+        // Fallback: manter objeto vazio para evitar erros
+        this.translations = { pt: {}, en: {} };
       }
     },
 
@@ -90,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // 2. Atualiza o botão de idioma
       if (this.languageToggleButton) {
         this.languageToggleButton.textContent = lang === 'pt' ? 'EN' : 'PT';
-        this.languageToggleButton.setAttribute('aria-label', lang === 'pt' ? 'Change language to English' : 'Mudar idioma para Português');
+        const labelKey = 'language_toggle_label';
+        const label = this.translations[lang]?.[labelKey];
+        if (label) {
+          this.languageToggleButton.setAttribute('aria-label', label);
+        }
       }
 
       // 3. Renderiza a tabela de produtos, se existir (agora fora do loop)
@@ -191,17 +197,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (isFormValid) {
-          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
-          statusDiv.className = 'mt-3 text-center success';
-          statusDiv.focus();
-          form.reset();
-          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+          this.submitContactForm(form, fields, statusDiv);
         } else {
           statusDiv.textContent = this.translations[this.currentLanguage]?.form_error;
           statusDiv.className = 'mt-3 text-center error';
           firstInvalidField?.focus();
         }
       });
+    },
+
+    // ========================================================
+    // 03.1. ENVIO DO FORMULÁRIO DE CONTATO
+    // ========================================================
+    async submitContactForm(form, fields, statusDiv) {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      
+      // Estado de loading
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.textContent = this.translations[this.currentLanguage]?.form_sending || 'Enviando...';
+      statusDiv.textContent = '';
+      statusDiv.className = 'mt-3 text-center';
+
+      try {
+        // Verificar se EmailJS está disponível
+        if (typeof emailjs !== 'undefined') {
+          // Configuração EmailJS
+          // Prioridade: 1) arquivo local (dev), 2) configuração inline (GitHub Pages)
+          const emailjsConfigInline = {
+            serviceId: 'service_uje8ex5',
+            templateId: 'template_twj6ftm'
+          };
+          
+          const serviceId = (typeof emailjsConfig !== 'undefined' && emailjsConfig.serviceId) 
+            ? emailjsConfig.serviceId 
+            : emailjsConfigInline.serviceId;
+          const templateId = (typeof emailjsConfig !== 'undefined' && emailjsConfig.templateId) 
+            ? emailjsConfig.templateId 
+            : emailjsConfigInline.templateId;
+
+          // Obter data e hora atual
+          const now = new Date();
+          const timeString = now.toLocaleString(this.currentLanguage === 'pt' ? 'pt-BR' : 'en-US', {
+            dateStyle: 'short',
+            timeStyle: 'short'
+          });
+
+          const templateParams = {
+            name: fields.nome.input.value.trim(),
+            email: fields.email.input.value.trim(),
+            message: fields.mensagem.input.value.trim(),
+            time: timeString
+          };
+
+          // EmailJS v4 usa uma sintaxe diferente
+          await emailjs.send(serviceId, templateId, templateParams);
+          
+          // Sucesso
+          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
+          statusDiv.className = 'mt-3 text-center success';
+          statusDiv.focus();
+          form.reset();
+          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+        } else {
+          // Fallback: Simular envio (para desenvolvimento)
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
+          statusDiv.className = 'mt-3 text-center success';
+          statusDiv.focus();
+          form.reset();
+          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+        }
+      } catch (error) {
+        console.error('Erro ao enviar formulário:', error);
+        statusDiv.textContent = this.translations[this.currentLanguage]?.form_error_send || 'Erro ao enviar mensagem. Tente novamente.';
+        statusDiv.className = 'mt-3 text-center error';
+        statusDiv.focus();
+      } finally {
+        // Restaurar botão
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitButton.textContent = originalButtonText;
+      }
     },
 
     // ========================================================
@@ -505,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     },
  // ===========================================================
-    //  09. LÓGICA PROJETO MULTIMIND QA 
+    //  09. LÓGICA PROJETO ADA ASSISTENTE DE ACESSIBILIDADE 
     // ===========================================================
     initMultiMindQA() {
         

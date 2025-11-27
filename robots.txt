@@ -1,0 +1,16 @@
+# robots.txt para Portfólio Joelma Ferreira
+# https://joelmaferreira.github.io/portfolio/
+
+User-agent: *
+Allow: /
+
+# Permitir acesso a todos os recursos
+Allow: /assets/
+Allow: /projetos/
+
+# Sitemap
+Sitemap: https://joelmaferreira.github.io/portfolio/sitemap.xml
+
+# Crawl-delay (opcional, remover se não necessário)
+# Crawl-delay: 1
+
