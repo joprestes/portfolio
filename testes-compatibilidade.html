@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testes de Compatibilidade - Portfólio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    .test-section {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .test-section h2 {
+      color: #7A49BF;
+      margin-top: 0;
+    }
+    .test-item {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-left: 4px solid #ddd;
+      padding-left: 1rem;
+    }
+    .pass {
+      border-left-color: #28a745;
+      background: #d4edda;
+    }
+    .fail {
+      border-left-color: #dc3545;
+      background: #f8d7da;
+    }
+    .warning {
+      border-left-color: #ffc107;
+      background: #fff3cd;
+    }
+    .info {
+      border-left-color: #17a2b8;
+      background: #d1ecf1;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    .browser-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .browser-card {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 4px;
+      border: 1px solid #dee2e6;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Testes de Compatibilidade e Funcionalidades</h1>
+  <p><strong>Data:</strong> <span id="date"></span></p>
+  <p><strong>Navegador:</strong> <span id="browser"></span></p>
+  <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+
+  <div class="test-section">
+    <h2>1. Compatibilidade de JavaScript (ES6+)</h2>
+    <div id="js-tests"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>2. Compatibilidade de CSS</h2>
+    <div id="css-tests"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>3. Funcionalidades do Projeto</h2>
+    <div id="feature-tests"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>4. Responsividade</h2>
+    <div id="responsive-tests"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>5. Performance</h2>
+    <div id="performance-tests"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>6. Informações do Navegador</h2>
+    <div class="browser-info" id="browser-info"></div>
+  </div>
+
+  <script>
+    // Data atual
+    document.getElementById('date').textContent = new Date().toLocaleString('pt-BR');
+
+    // Informações do navegador
+    const ua = navigator.userAgent;
+    document.getElementById('userAgent').textContent = ua;
+
+    let browserName = 'Desconhecido';
+    if (ua.includes('Chrome') && !ua.includes('Edg')) browserName = 'Chrome';
+    else if (ua.includes('Firefox')) browserName = 'Firefox';
+    else if (ua.includes('Safari') && !ua.includes('Chrome')) browserName = 'Safari';
+    else if (ua.includes('Edg')) browserName = 'Edge';
+    document.getElementById('browser').textContent = browserName;
+
+    // Testes de JavaScript
+    const jsTests = document.getElementById('js-tests');
+    const jsFeatures = {
+      'Arrow Functions': () => { const fn = () => true; return fn(); },
+      'Template Literals': () => { return `${'test'}` === 'test'; },
+      'Destructuring': () => { const {a} = {a: 1}; return a === 1; },
+      'Spread Operator': () => { return [...[1,2]].length === 2; },
+      'Async/Await': () => { return typeof (async () => {})() === 'object'; },
+      'Promise': () => { return typeof Promise !== 'undefined'; },
+      'localStorage': () => { try { localStorage.setItem('test', 'test'); localStorage.removeItem('test'); return true; } catch(e) { return false; } },
+      'fetch': () => { return typeof fetch !== 'undefined'; },
+      'IntersectionObserver': () => { return typeof IntersectionObserver !== 'undefined'; },
+      'classList': () => { return 'classList' in document.createElement('div'); },
+      'addEventListener': () => { return 'addEventListener' in window; },
+      'querySelector': () => { return typeof document.querySelector === 'function'; },
+      'getElementById': () => { return typeof document.getElementById === 'function'; }
+    };
+
+    Object.entries(jsFeatures).forEach(([name, test]) => {
+      const div = document.createElement('div');
+      div.className = 'test-item';
+      try {
+        const result = test();
+        div.className += result ? ' pass' : ' fail';
+        div.innerHTML = `<strong>${name}:</strong> ${result ? '✅ Suportado' : '❌ Não suportado'}`;
+      } catch(e) {
+        div.className += ' fail';
+        div.innerHTML = `<strong>${name}:</strong> ❌ Erro: ${e.message}`;
+      }
+      jsTests.appendChild(div);
+    });
+
+    // Testes de CSS
+    const cssTests = document.getElementById('css-tests');
+    const testEl = document.createElement('div');
+    testEl.style.position = 'absolute';
+    testEl.style.visibility = 'hidden';
+    document.body.appendChild(testEl);
+
+    const cssFeatures = {
+      'CSS Variables': () => {
+        testEl.style.setProperty('--test-var', '10px');
+        return testEl.style.getPropertyValue('--test-var') === '10px';
+      },
+      'Flexbox': () => {
+        testEl.style.display = 'flex';
+        return testEl.style.display === 'flex';
+      },
+      'Grid': () => {
+        testEl.style.display = 'grid';
+        return testEl.style.display === 'grid';
+      },
+      'clamp()': () => {
+        try {
+          testEl.style.width = 'clamp(100px, 50%, 500px)';
+          return true;
+        } catch(e) {
+          return false;
+        }
+      },
+      ':focus-visible': () => {
+        return CSS.supports('selector(:focus-visible)');
+      },
+      'prefers-reduced-motion': () => {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches !== null;
+      },
+      'aspect-ratio': () => {
+        return CSS.supports('aspect-ratio', '16/9');
+      },
+      'object-fit': () => {
+        return CSS.supports('object-fit', 'cover');
+      }
+    };
+
+    Object.entries(cssFeatures).forEach(([name, test]) => {
+      const div = document.createElement('div');
+      div.className = 'test-item';
+      try {
+        const result = test();
+        div.className += result ? ' pass' : ' warning';
+        div.innerHTML = `<strong>${name}:</strong> ${result ? '✅ Suportado' : '⚠️ Pode não ser suportado'}`;
+      } catch(e) {
+        div.className += ' warning';
+        div.innerHTML = `<strong>${name}:</strong> ⚠️ Não testável: ${e.message}`;
+      }
+      cssTests.appendChild(div);
+    });
+
+    // Testes de Funcionalidades
+    const featureTests = document.getElementById('feature-tests');
+    const features = {
+      'Modo Escuro (localStorage)': () => {
+        try {
+          localStorage.setItem('theme-test', 'dark');
+          const result = localStorage.getItem('theme-test') === 'dark';
+          localStorage.removeItem('theme-test');
+          return result;
+        } catch(e) {
+          return false;
+        }
+      },
+      'Troca de Idioma (localStorage)': () => {
+        try {
+          localStorage.setItem('language-test', 'pt');
+          const result = localStorage.getItem('language-test') === 'pt';
+          localStorage.removeItem('language-test');
+          return result;
+        } catch(e) {
+          return false;
+        }
+      },
+      'Animações CSS': () => {
+        return CSS.supports('animation', 'test 1s');
+      },
+      'Transições CSS': () => {
+        return CSS.supports('transition', 'all 1s');
+      },
+      'Transform 3D': () => {
+        return CSS.supports('transform', 'rotateX(180deg)');
+      },
+      'Backface Visibility': () => {
+        return CSS.supports('backface-visibility', 'hidden');
+      }
+    };
+
+    Object.entries(features).forEach(([name, test]) => {
+      const div = document.createElement('div');
+      div.className = 'test-item';
+      try {
+        const result = test();
+        div.className += result ? ' pass' : ' warning';
+        div.innerHTML = `<strong>${name}:</strong> ${result ? '✅ Funcional' : '⚠️ Pode não funcionar'}`;
+      } catch(e) {
+        div.className += ' warning';
+        div.innerHTML = `<strong>${name}:</strong> ⚠️ Erro: ${e.message}`;
+      }
+      featureTests.appendChild(div);
+    });
+
+    // Testes de Responsividade
+    const responsiveTests = document.getElementById('responsive-tests');
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const viewport = {
+      'Largura da Tela': `${width}px`,
+      'Altura da Tela': `${height}px`,
+      'Device Pixel Ratio': window.devicePixelRatio || 1,
+      'Orientation': width > height ? 'Landscape' : 'Portrait',
+      'Breakpoint Mobile': width < 768 ? '✅ Sim' : '❌ Não',
+      'Breakpoint Tablet': width >= 768 && width < 992 ? '✅ Sim' : '❌ Não',
+      'Breakpoint Desktop': width >= 992 ? '✅ Sim' : '❌ Não'
+    };
+
+    Object.entries(viewport).forEach(([name, value]) => {
+      const div = document.createElement('div');
+      div.className = 'test-item info';
+      div.innerHTML = `<strong>${name}:</strong> ${value}`;
+      responsiveTests.appendChild(div);
+    });
+
+    // Testes de Performance
+    const performanceTests = document.getElementById('performance-tests');
+    const perf = {
+      'Performance API': typeof performance !== 'undefined' ? '✅ Disponível' : '❌ Não disponível',
+      'Navigation Timing': typeof performance.timing !== 'undefined' ? '✅ Disponível' : '❌ Não disponível',
+      'Resource Timing': typeof performance.getEntriesByType === 'function' ? '✅ Disponível' : '❌ Não disponível'
+    };
+
+    Object.entries(perf).forEach(([name, value]) => {
+      const div = document.createElement('div');
+      div.className = 'test-item info';
+      div.innerHTML = `<strong>${name}:</strong> ${value}`;
+      performanceTests.appendChild(div);
+    });
+
+    // Informações do Navegador
+    const browserInfo = document.getElementById('browser-info');
+    const info = {
+      'Navegador': browserName,
+      'Versão': navigator.appVersion,
+      'Plataforma': navigator.platform,
+      'Idioma': navigator.language,
+      'Cookies': navigator.cookieEnabled ? '✅ Habilitado' : '❌ Desabilitado',
+      'JavaScript': '✅ Habilitado',
+      'LocalStorage': (() => {
+        try {
+          localStorage.setItem('test', 'test');
+          localStorage.removeItem('test');
+          return '✅ Disponível';
+        } catch(e) {
+          return '❌ Indisponível';
+        }
+      })(),
+      'SessionStorage': (() => {
+        try {
+          sessionStorage.setItem('test', 'test');
+          sessionStorage.removeItem('test');
+          return '✅ Disponível';
+        } catch(e) {
+          return '❌ Indisponível';
+        }
+      })()
+    };
+
+    Object.entries(info).forEach(([name, value]) => {
+      const div = document.createElement('div');
+      div.className = 'browser-card';
+      div.innerHTML = `<strong>${name}</strong><br>${value}`;
+      browserInfo.appendChild(div);
+    });
+
+    // Limpar elemento de teste
+    document.body.removeChild(testEl);
+  </script>
+</body>
+</html>
+

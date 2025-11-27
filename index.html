@@ -5,12 +5,43 @@
  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+                 script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://kit.fontawesome.com https://cdn.emailjs.com; 
+                 style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; 
+                 font-src 'self' https://fonts.gstatic.com data:; 
+                 img-src 'self' data: https:; 
+                 connect-src 'self' https://api.emailjs.com https://*.emailjs.com;">
 
   
   <title data-translate-key="doc_title">Joelma Ferreira | Líder de QA & Acessibilidade</title>
   <meta name="description" content="Portfólio de Joelma Ferreira, Líder de Engenharia de Qualidade. Especialista em automação de testes, QA e acessibilidade digital (a11y)." data-translate-key="meta_description" />
   <meta name="author" content="Joelma de Oliveira Prestes Ferreira" />
   <link rel="author" href="mailto:joprestes@hotmail.com" />
+
+  <!-- SEO Adicional -->
+  <meta name="keywords" content="QA, Quality Assurance, Acessibilidade, Testes, Automação, Software Testing, Digital Accessibility, A11y, Joelma Ferreira" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://joelmaferreira.github.io/portfolio/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://joelmaferreira.github.io/portfolio/" />
+  <meta property="og:title" content="Joelma Ferreira | Líder de QA & Acessibilidade" />
+  <meta property="og:description" content="Portfólio de Joelma Ferreira, Líder de Engenharia de Qualidade. Especialista em automação de testes, QA e acessibilidade digital (a11y)." />
+  <meta property="og:image" content="https://joelmaferreira.github.io/portfolio/assets/img/banner.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://joelmaferreira.github.io/portfolio/" />
+  <meta property="twitter:title" content="Joelma Ferreira | Líder de QA & Acessibilidade" />
+  <meta property="twitter:description" content="Portfólio de Joelma Ferreira, Líder de Engenharia de Qualidade. Especialista em automação de testes, QA e acessibilidade digital (a11y)." />
+  <meta property="twitter:image" content="https://joelmaferreira.github.io/portfolio/assets/img/banner.webp" />
 
   <!-- Favicons e Ícones do Site -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml"> 
@@ -29,7 +60,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#menuNav" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#menuNav">
 
   <div class="visually-hidden" aria-live="polite" id="theme-announcer"></div>
   
@@ -53,7 +84,7 @@
             <li class="nav-item"><a class="nav-link" href="#contato" data-testid="nav-link-contato" data-translate-key="nav_contato">Contato</a></li>
           </ul>
           
-          <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light" aria-label="Change language to English" data-testid="botao-idioma">PT</button>
+          <button id="language-toggle" class="btn btn-sm ms-lg-3 btn-outline-light" aria-label="Mudar idioma para Inglês" data-testid="botao-idioma" data-translate-key="language_toggle_label">PT</button>
 
           <button id="toggle-dark" class="btn btn-sm ms-lg-2 btn-outline-light" aria-pressed="false" aria-label="Ativar modo escuro" data-translate-key="toggle_dark_mode_label" data-testid="botao-modo-escuro">
             🌙
@@ -112,7 +143,7 @@
           <article class="card h-100 animate-on-scroll" data-testid="habilidade-java" tabindex="0">
             <div class="card-body">
               <h3 class="card-title" data-translate-key="skill_java_title">Automação com Java</h3>
-              <ul><li>Selenium WebDriver</li><li>JUnit e RestAssured</li></ul>
+              <ul><li>Selenium WebDriver</li><li data-translate-key="skill_java_item1">JUnit e RestAssured</li></ul>
             </div>
           </article>
         </div>
@@ -209,7 +240,7 @@
               <h3 id="titulo-multimind" class="card-title" data-translate-key="project_multimind_title">🧠 MultiMind QA</h3>
               <p class="card-text" data-translate-key="project_multimind_desc">Chatbot multiagente com Gemini para validação de acessibilidade e qualidade de software.</p>
               <ul class="tech-list"><li>Gemini API</li><li>Acessibilidade</li><li>Python</li></ul>
-              <a href="projetos/multimind/multimind.html" class="btn btn-primary mt-auto" rel="noopener noreferrer" data-testid="botao-ver-multimind" data-translate-key="project_button_text">Ver Projeto</a>
+              <a href="projetos/multimind/multimind.html" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" data-testid="botao-ver-multimind" data-translate-key="project_button_text">Ver Projeto</a>
             </div>
           </article>
         </div>
@@ -235,18 +266,18 @@
       <form class="mx-auto" style="max-width: 600px;" novalidate data-testid="contato-formulario">
         <div class="mb-3">
           <label for="nome" class="form-label" data-translate-key="contact_name_label">Nome</label>
-          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required aria-required="true" data-testid="input-nome" data-translate-key="contact_name_placeholder"/>
-          <div id="nome-error" class="form-error-message" aria-live="polite"></div>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required aria-required="true" aria-describedby="nome-error" data-testid="input-nome" data-translate-key="contact_name_placeholder"/>
+          <div id="nome-error" class="form-error-message" aria-live="polite" role="alert"></div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label" data-translate-key="contact_email_label">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required aria-required="true" data-testid="input-email" data-translate-key="contact_email_placeholder"/>
-          <div id="email-error" class="form-error-message" aria-live="polite"></div>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required aria-required="true" aria-describedby="email-error" data-testid="input-email" data-translate-key="contact_email_placeholder"/>
+          <div id="email-error" class="form-error-message" aria-live="polite" role="alert"></div>
         </div>
         <div class="mb-3">
           <label for="mensagem" class="form-label" data-translate-key="contact_message_label">Mensagem</label>
-          <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required aria-required="true" data-testid="input-mensagem" data-translate-key="contact_message_placeholder"></textarea>
-          <div id="mensagem-error" class="form-error-message" aria-live="polite"></div>
+          <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required aria-required="true" aria-describedby="mensagem-error" data-testid="input-mensagem" data-translate-key="contact_message_placeholder"></textarea>
+          <div id="mensagem-error" class="form-error-message" aria-live="polite" role="alert"></div>
         </div>
         <button type="submit" class="btn btn-primary" aria-label="Enviar mensagem" data-testid="botao-enviar" data-translate-key="contact_submit_button">Enviar</button>
       </form>
@@ -266,7 +297,42 @@
     </div>
   </footer>
 
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joelma de Oliveira Prestes Ferreira",
+    "jobTitle": "Líder de Engenharia de Qualidade de Software",
+    "url": "https://joelmaferreira.github.io/portfolio/",
+    "sameAs": [
+      "https://www.linkedin.com/in/joprestes84/",
+      "https://medium.com/@joprestes"
+    ],
+    "email": "joprestes@hotmail.com",
+    "knowsAbout": [
+      "Quality Assurance",
+      "Test Automation",
+      "Digital Accessibility",
+      "Software Testing",
+      "Java",
+      "JavaScript",
+      "Cypress",
+      "Selenium",
+      "CI/CD"
+    ],
+    "description": "Líder de Engenharia de Qualidade de Software com mais de 4 anos de experiência em automação de testes, QA e acessibilidade digital."
+  }
+  </script>
+
   <!-- Scripts-->
+  <!-- EmailJS (opcional - descomentar e configurar quando necessário) -->
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // Substituir pela Public Key do EmailJS
+    })();
+  </script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
   <script src="https://kit.fontawesome.com/99ba202d26.js" crossorigin="anonymous" defer></script>
   <script src="assets/js/script.js" defer></script>

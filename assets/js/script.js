@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         this.translations = await response.json();
       } catch (error) {
         console.error("Could not load translations:", error);
+        // Fallback: manter objeto vazio para evitar erros
+        this.translations = { pt: {}, en: {} };
       }
     },
 
@@ -90,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // 2. Atualiza o botão de idioma
       if (this.languageToggleButton) {
         this.languageToggleButton.textContent = lang === 'pt' ? 'EN' : 'PT';
-        this.languageToggleButton.setAttribute('aria-label', lang === 'pt' ? 'Change language to English' : 'Mudar idioma para Português');
+        const labelKey = 'language_toggle_label';
+        const label = this.translations[lang]?.[labelKey];
+        if (label) {
+          this.languageToggleButton.setAttribute('aria-label', label);
+        }
       }
 
       // 3. Renderiza a tabela de produtos, se existir (agora fora do loop)
@@ -191,17 +197,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (isFormValid) {
-          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
-          statusDiv.className = 'mt-3 text-center success';
-          statusDiv.focus();
-          form.reset();
-          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+          this.submitContactForm(form, fields, statusDiv);
         } else {
           statusDiv.textContent = this.translations[this.currentLanguage]?.form_error;
           statusDiv.className = 'mt-3 text-center error';
           firstInvalidField?.focus();
         }
       });
+    },
+
+    // ========================================================
+    // 03.1. ENVIO DO FORMULÁRIO DE CONTATO
+    // ========================================================
+    async submitContactForm(form, fields, statusDiv) {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      
+      // Estado de loading
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.textContent = this.translations[this.currentLanguage]?.form_sending || 'Enviando...';
+      statusDiv.textContent = '';
+      statusDiv.className = 'mt-3 text-center';
+
+      try {
+        // Verificar se EmailJS está disponível
+        if (typeof emailjs !== 'undefined') {
+          // Configuração EmailJS (usuário precisa configurar)
+          const serviceId = 'YOUR_SERVICE_ID'; // Substituir pelo Service ID do EmailJS
+          const templateId = 'YOUR_TEMPLATE_ID'; // Substituir pelo Template ID do EmailJS
+          const publicKey = 'YOUR_PUBLIC_KEY'; // Substituir pela Public Key do EmailJS
+
+          const templateParams = {
+            from_name: fields.nome.input.value,
+            from_email: fields.email.input.value,
+            message: fields.mensagem.input.value,
+            to_email: 'joprestes@hotmail.com'
+          };
+
+          await emailjs.send(serviceId, templateId, templateParams, publicKey);
+          
+          // Sucesso
+          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
+          statusDiv.className = 'mt-3 text-center success';
+          statusDiv.focus();
+          form.reset();
+          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+        } else {
+          // Fallback: Simular envio (para desenvolvimento)
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
+          statusDiv.className = 'mt-3 text-center success';
+          statusDiv.focus();
+          form.reset();
+          Object.values(fields).forEach(field => field.input?.setAttribute('aria-invalid', 'false'));
+        }
+      } catch (error) {
+        console.error('Erro ao enviar formulário:', error);
+        statusDiv.textContent = this.translations[this.currentLanguage]?.form_error_send || 'Erro ao enviar mensagem. Tente novamente.';
+        statusDiv.className = 'mt-3 text-center error';
+        statusDiv.focus();
+      } finally {
+        // Restaurar botão
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitButton.textContent = originalButtonText;
+      }
     },
 
     // ========================================================

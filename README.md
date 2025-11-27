@@ -56,8 +56,7 @@ O projeto foi construído do zero com foco em código limpo, melhores práticas 
 ├── assets/
 │   ├── css/style.css           # Estilos centralizados
 │   ├── js/script.js            # Lógica principal
-│   ├── img/                    # Imagens de fundo
-│   └── images/                 # Imagens de projetos
+│   └── img/                    # Imagens e thumbnails dos projetos
 ├── translations.json           # Traduções PT/EN
 └── README.md                   # Este arquivo
 ```
@@ -130,8 +129,7 @@ The project was developed from scratch, focusing on clean code, best practices, 
 ├── assets/
 │   ├── css/style.css
 │   ├── js/script.js
-│   ├── img/
-│   └── images/
+│   └── img/
 ├── translations.json
 └── README.md
 ```
