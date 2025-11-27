@@ -7,6 +7,24 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## [Unreleased] - 2025-11-26
 
+### ✅ EmailJS Configurado e Funcionando
+
+#### Adicionado
+- **Formulário de Contato:**
+  - Integração completa com EmailJS
+  - Service ID: `service_uje8ex5`
+  - Template ID: `template_twj6ftm`
+  - Public Key: `Ga1azCFa-pZGuqrt6`
+  - Estado de loading no botão de envio
+  - Feedback visual durante envio
+  - Tratamento de erros robusto
+  - Email funcionando perfeitamente ✅
+
+#### Corrigido
+- Public Key corrigida (estava faltando o "6" no final)
+- Sintaxe do EmailJS v4 ajustada (removido parâmetro publicKey do send)
+- Erro 400 resolvido após correção da Public Key
+
 ### 🎯 Melhorias de Alta Prioridade
 
 #### ✅ Adicionado
@@ -44,6 +62,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - **Traduções:**
   - Balanceadas todas as traduções (167 chaves PT/EN)
   - Adicionadas traduções faltantes (`doc_title_multimind`, `meta_description_multimind`)
+  - Renomeado projeto "MultiMind QA" para "ADA Assistente de Acessibilidade"
   - Traduzido texto hardcoded "JUnit e RestAssured"
 
 - **JavaScript:**

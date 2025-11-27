@@ -223,19 +223,36 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         // Verificar se EmailJS está disponível
         if (typeof emailjs !== 'undefined') {
-          // Configuração EmailJS (usuário precisa configurar)
-          const serviceId = 'YOUR_SERVICE_ID'; // Substituir pelo Service ID do EmailJS
-          const templateId = 'YOUR_TEMPLATE_ID'; // Substituir pelo Template ID do EmailJS
-          const publicKey = 'YOUR_PUBLIC_KEY'; // Substituir pela Public Key do EmailJS
+          // Configuração EmailJS
+          // Prioridade: 1) arquivo local (dev), 2) configuração inline (GitHub Pages)
+          const emailjsConfigInline = {
+            serviceId: 'service_uje8ex5',
+            templateId: 'template_twj6ftm'
+          };
+          
+          const serviceId = (typeof emailjsConfig !== 'undefined' && emailjsConfig.serviceId) 
+            ? emailjsConfig.serviceId 
+            : emailjsConfigInline.serviceId;
+          const templateId = (typeof emailjsConfig !== 'undefined' && emailjsConfig.templateId) 
+            ? emailjsConfig.templateId 
+            : emailjsConfigInline.templateId;
+
+          // Obter data e hora atual
+          const now = new Date();
+          const timeString = now.toLocaleString(this.currentLanguage === 'pt' ? 'pt-BR' : 'en-US', {
+            dateStyle: 'short',
+            timeStyle: 'short'
+          });
 
           const templateParams = {
-            from_name: fields.nome.input.value,
-            from_email: fields.email.input.value,
-            message: fields.mensagem.input.value,
-            to_email: 'joprestes@hotmail.com'
+            name: fields.nome.input.value.trim(),
+            email: fields.email.input.value.trim(),
+            message: fields.mensagem.input.value.trim(),
+            time: timeString
           };
 
-          await emailjs.send(serviceId, templateId, templateParams, publicKey);
+          // EmailJS v4 usa uma sintaxe diferente
+          await emailjs.send(serviceId, templateId, templateParams);
           
           // Sucesso
           statusDiv.textContent = this.translations[this.currentLanguage]?.form_success;
@@ -567,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     },
  // ===========================================================
-    //  09. LÓGICA PROJETO MULTIMIND QA 
+    //  09. LÓGICA PROJETO ADA ASSISTENTE DE ACESSIBILIDADE 
     // ===========================================================
     initMultiMindQA() {
         

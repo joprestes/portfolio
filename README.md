@@ -52,7 +52,7 @@ O projeto foi construído do zero com foco em código limpo, melhores práticas 
 ├── projetos/
 │   ├── cartao/                 # Projeto Cartão de Visitas
 │   ├── mario/                  # Projeto Mario Jump
-│   └── multimind/              # Projeto MultiMind QA
+│   └── multimind/              # Projeto ADA Assistente de Acessibilidade
 ├── assets/
 │   ├── css/style.css           # Estilos centralizados
 │   ├── js/script.js            # Lógica principal
@@ -125,7 +125,7 @@ The project was developed from scratch, focusing on clean code, best practices, 
 ├── projects/
 │   ├── cartao/
 │   ├── mario/
-│   └── multimind/
+│   └── multimind/              # Projeto ADA Assistente de Acessibilidade
 ├── assets/
 │   ├── css/style.css
 │   ├── js/script.js

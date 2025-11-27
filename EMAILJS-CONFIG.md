@@ -21,28 +21,15 @@ Este guia explica como configurar o EmailJS para que o formulário de contato fu
 2. Clique em **Add New Service**
 3. Escolha seu provedor (Gmail, Outlook, etc.)
 4. Siga as instruções para conectar sua conta
-5. **Anote o Service ID** gerado
+5. **Service ID já configurado:** `service_uje8ex5` ✅
 
 ### 3. Criar Template de Email
 
 1. Vá em **Email Templates**
 2. Clique em **Create New Template**
-3. Use o seguinte template:
-
-```
-De: {{from_name}} <{{from_email}}>
-Para: {{to_email}}
-
-Assunto: Nova mensagem do portfólio - {{from_name}}
-
-Mensagem:
-{{message}}
-
----
-Enviado através do formulário de contato do portfólio.
-```
-
-4. **Anote o Template ID** gerado
+3. **Subject:** `Nova mensagem do portfólio - {{name}}`
+4. Cole o template HTML fornecido (veja `EMAILJS-TEMPLATE.md` para o template completo)
+5. **Anote o Template ID** gerado
 
 ### 4. Obter Public Key
 
@@ -54,9 +41,9 @@ Enviado através do formulário de contato do portfólio.
 Edite o arquivo `assets/js/script.js` e substitua:
 
 ```javascript
-// Linha ~220 (aproximadamente)
-const serviceId = 'YOUR_SERVICE_ID'; // ← Substituir pelo Service ID
-const templateId = 'YOUR_TEMPLATE_ID'; // ← Substituir pelo Template ID
+// Linha ~228 (aproximadamente)
+const serviceId = 'service_uje8ex5'; // ✅ Já configurado
+const templateId = 'template_twj6ftm'; // ✅ Já configurado
 const publicKey = 'YOUR_PUBLIC_KEY'; // ← Substituir pela Public Key
 ```
 

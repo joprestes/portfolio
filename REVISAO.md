@@ -21,7 +21,7 @@
 - **Problema:** Faltavam meta tags para compartilhamento social
 - **Correção:** Adicionadas meta tags Open Graph e Twitter Cards no `index.html` para melhorar SEO e compartilhamento em redes sociais
 
-### 3. **Link do Projeto MultiMind** ✅
+### 3. **Link do Projeto ADA Assistente de Acessibilidade** ✅
 - **Problema:** Link sem `target="_blank"` mas com `rel="noopener noreferrer"` (inconsistente)
 - **Correção:** Adicionado `target="_blank"` para manter consistência com outros links de projetos
 
@@ -124,7 +124,7 @@
 - [ ] Testar modo escuro/claro
 - [ ] Testar troca de idioma (PT/EN)
 - [ ] Testar formulário de contato
-- [ ] Testar todos os projetos (Estante, Floricultura, Mario, Cartão, MultiMind)
+- [ ] Testar todos os projetos (Estante, Floricultura, Mario, Cartão, ADA Assistente de Acessibilidade)
 - [ ] Verificar animações e transições
 
 ### Compatibilidade Cross-Browser
